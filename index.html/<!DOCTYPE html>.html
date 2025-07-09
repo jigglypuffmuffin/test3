@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 4-Month Anniversary! My baby Bryan!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fffbe6;
+      font-family: 'Comic Neue', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #b08500;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #664400;
+      margin-bottom: 1rem;
+    }
+
+    .counter {
+      background-color: #ffe9a9;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      border: 2px solid #f7d778;
+      color: #a95b00;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .hearts {
+      font-size: 1.5rem;
+      color: pink;
+      animation: float 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+
+    .love-letter {
+      max-width: 500px;
+      background-color: #fff2c2;
+      padding: 1.5rem;
+      border-radius: 20px;
+      border: 2px dashed #f7d778;
+      color: #5e3200;
+      font-size: 1.1rem;
+      margin: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    button {
+      background-color: #fdd46e;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #5e3200;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+      margin-top: 0.5rem;
+    }
+
+    button:hover {
+      background-color: #ffe799;
+    }
+
+    #secretMessage, #passwordPrompt {
+      margin-top: 1rem;
+      color: #a95b00;
+      font-size: 1.1rem;
+      min-height: 1.5em;
+    }
+
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy 4-Month Anniversary! My baby Bryan! 🎉</h1>
+  <p>Since March 11, 2025 — I have loved you and will continue to do so~ 🍮</p>
+
+  <div class="counter" id="dayCount"></div>
+  <div class="hearts">💛💖💛💖</div>
+
+  <div class="love-letter">
+    Dear my darling,<br><br>
+    Although it wasn't a smooth journey, we have endured all the hardship and look where we are now!  
+    We all think we may not be the best but I have decided to be fixtated on you, annoy you for the rest of my life! 
+    The end I want to see is with you, me and 2 cats in the house, wherever we may be
+    I hope you can wait for me will not get tired of me T T
+    <br><br>I love you dearly, REMEMBER THAT!! 💕
+  </div>
+
+  <button onclick="showRandomMessage()">💌 Click me to see my usual naggings</button>
+  <div id="secretMessage"></div>
+
+  <hr style="margin: 2rem 0; width: 60%; border: 1px dashed #f7d778;">
+
+  <p>🔒 Unlock a hidden message just for you:</p>
+  <input type="password" id="passwordInput" placeholder="Enter password">
+  <button onclick="checkPassword()">Unlock</button>
+  <div id="passwordPrompt"></div>
+
+  <audio autoplay loop>
+    <source src="https://dl.dropboxusercontent.com/s/kxpe5x4l1tkckjz/Young%20and%20Beautiful%20-%20Lana%20Del%20Rey.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <script>
+    // Days counter
+    const startDate = new Date("2025-03-11");
+    const today = new Date();
+    const diffTime = today - startDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    document.getElementById("dayCount").innerText = `We've been together for ${diffDays} days 💕`;
+
+    // Random cute messages
+    const messages = [
+      "You are my favourite person! You should know that",
+      "Baby it's time to take the pillsssss!~",
+      "TELL ME DID YOU DRINK ENOUGH WOTAH?",
+      "My baby, my darling, my honey, mine mine MINEEE",
+      "I fantasize some weird and kinky things...you better be ready",
+      "GOOOOOOD moring my shayla!~ Did my sleepy head sleep well?",
+      "You're cuter than pompompurin",
+      "It's either we walk down the aisle together or your funeral hheheh"
+    ];
+
+    function showRandomMessage() {
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById("secretMessage").innerText = msg;
+    }
+
+    // Password-protected message
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      const prompt = document.getElementById("passwordPrompt");
+      if (input === "March11") {
+        prompt.innerHTML = `
+          <div style="background: #fff8d6; padding: 1rem; border-radius: 10px; border: 1px solid #f7d778;">
+            🥺 ONG babyy!~ You have unlocked my heart.<br>
+            Every night, I hug piggy thinking about you, wishing that you are here with me, always.<br>
+            Please continue to love me !! (PS: though not every code was written by me, I just wanted you to know I wanna start learning it so I can make more of these in the future)
+          </div>`;
+      } else {
+        prompt.innerText = "❌ Wrong password. Try again, pudding 🍮";
+      }
+    }
+  </script>
+</body>
+</html>
